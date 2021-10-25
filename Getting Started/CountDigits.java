@@ -9,5 +9,15 @@ import java.util.*;
   
   public static void main(String[] args) {
     // write your code here  
+    Scanner scan = new Scanner(System.in);
+    System.out.println("Enter a number: ");
+    int number= scan.nextInt();
+    int count =0;
+   while(number!=0){
+     number/=10;
+     count++;
+   }
+   System.out.print("Number of digits in the given number is: "+ count);
+   scan.close();
    }
   }
