@@ -5,7 +5,6 @@
     4. For each input value of n, print "prime" if the number is prime and "not prime" otherwise.
 */
 import java.util.*;
-import java.lang.Math;
 public class PrimeNumber {
     public static void main(String[] args) {
         Scanner scn = new Scanner(System.in);
@@ -16,13 +15,12 @@ public class PrimeNumber {
             int count=0;
             System.out.println("Enter a number: ");
             int number = scn.nextInt();
-            for(int i=2;i<Math.abs(number);i++){
+            if(number<=0){System.out.println("Give a number greater than 1.");continue;}
+            for(int i=2;i*i<number;i++){
                 if(number%i==0){
                     count ++;
                 }
             }
-            if(number==0||Math.abs(number)==1)
-            continue;
             if(count==0){
                 System.out.println("Prime.");
             }
