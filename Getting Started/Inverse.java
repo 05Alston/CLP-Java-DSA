@@ -12,7 +12,16 @@
 import java.util.*;
 
 public class Inverse{
-  static boolean isValid(int arr1[]){
+  static boolean isValid(int arr[], int n){
+    boolean isValid = false;
+    for(int i=0;i<n;i++){
+      for(int j=1; j<=n;j++){
+        if(arr[i]==j)
+        isValid=true;
+      }
+      if(!isValid)
+      return false;
+    }
     return true;
   }
   public static void main(String[] args) {
@@ -34,7 +43,7 @@ public class Inverse{
       arr1[i]=n%10;
       n/=10;
     }
-    if(!isValid(arr1)){
+    if(!isValid(arr1,count)){
       System.out.println("Invalid input.");
       System.exit(0);
     }

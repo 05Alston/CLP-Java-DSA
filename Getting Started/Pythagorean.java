@@ -13,9 +13,9 @@ import java.util.*;
     // write your code here  
     Scanner scn = new Scanner(System.in);
     System.out.println("Enter three numbers: ");
-    float a = scn.nextFloat();
-    float b = scn.nextFloat();
-    float c= scn.nextFloat();
+    int a = scn.nextInt();
+    int b = scn.nextInt();
+    int c= scn.nextInt();
     scn.close();
     if(a>b&&a>c){
       c=a+c;
@@ -28,7 +28,7 @@ import java.util.*;
       c=c-b;
     }
 
-    if(a*a+b*b==c*c)
+    if((a*a+b*b)==c*c)
     System.out.println("The numbers "+a+", "+b+" and "+c+" are pythagorean triplets.");
     else
     System.out.println("The numbers "+a+", "+b+" and "+c+" are not pythagorean triplets.");

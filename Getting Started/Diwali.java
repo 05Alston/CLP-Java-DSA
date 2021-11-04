@@ -17,13 +17,14 @@ import java.util.*;
     Scanner sc = new Scanner(System.in);
     System.out.println("Enter number of bulbs:");
     int n= sc.nextInt();
+    sc.close();
     int arr[]= new int[n];
     for(int i=0;i<n;i++){
       arr[i]=1;
     }
     for(int i=2;i<=n;i++){
       for(int j=0;j<n;j+=i){
-        if(j==0){j=1;continue;}
+        if(j==0){j=-1;continue;}
         if(arr[j]==1)
         arr[j]=0;
         else

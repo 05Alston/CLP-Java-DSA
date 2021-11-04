@@ -54,7 +54,7 @@ public class Rotate {
             }
         }
         else{
-            k=Math.abs(k)-count;
+            k=count-Math.abs(k);
             for(int i=count-k;i<count;i++){
                 System.out.print(arr[i]);
             }
