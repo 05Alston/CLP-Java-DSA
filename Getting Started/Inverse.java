@@ -10,15 +10,17 @@
 */
 
 import java.util.*;
+import java.lang.Math;
 
 public class Inverse{
-  static boolean isValid(int arr[], int n){
+  static boolean isValid(int n, int c){
     boolean isValid = false;
-    for(int i=0;i<n;i++){
-      for(int j=1; j<=n;j++){
-        if(arr[i]==j)
+    for(int i=0;i<c;i++){
+      for(int j=1; j<=c;j++){
+        if(n%10==j)
         isValid=true;
       }
+      n/=10;
       if(!isValid)
       return false;
     }
@@ -32,30 +34,20 @@ public class Inverse{
     sc.close();
     int count=0;
     int temp =n;
-    while(n>0){
-      n/=10;
+    while(temp>0){
+      temp/=10;
       count++;
     }
-    n=temp;
-    int arr1[] = new int[count];
-    int arr2[] = new int[count];
-    for(int i= count-1;i>=0;i--){
-      arr1[i]=n%10;
-      n/=10;
-    }
-    if(!isValid(arr1,count)){
+    if(!isValid(n,count)){
       System.out.println("Invalid input.");
       System.exit(0);
     }
-    System.out.println();
+    double inv=0;
     for(int i=1;i<=count;i++){
-      for(int j=1;j<=count;j++){
-        if(arr1[count-i]==j)
-        arr2[j-1]=i;
-      }
+      inv = inv + (i)*Math.pow(10, n%10-1);
+      n/=10;
     }
-    for(int i=count-1;i>=0;i--){
-      System.out.print(arr2[i]);
-    }
+    System.out.println((int)inv);
+
   }
 }

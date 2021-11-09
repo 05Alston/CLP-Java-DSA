@@ -17,51 +17,32 @@ import java.util.*;
 public class Rotate {
     public static void main(String[] args) {
         // write your code here  
-        int count=0;
+        int count=0,mul=1,div=1;
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter any number:");
         int n = sc.nextInt();
         int temp=n;
-        while(n>0){
-            n/=10;
+        while(temp>0){
+            temp/=10;
             count++;
         }
-        n=temp;
-        int arr[] = new int[count];
-        for(int i= count-1;i>-1;i--){
-            arr[i]=n%10;
-            n/=10;
-        }
-        System.out.println(count);
-        for(int j=0;j<count;j++){
-            System.out.print(arr[j]);
-        }
-        System.out.println();
+        temp=n;
         System.out.println("Enter number of times to rotate number:");
         int k = sc.nextInt();
         sc.close();
+        k%=count;
 
-        if(Math.abs(k)>count){
-            k%=count;
+        if(k<0){
+            k+=count;
         }
 
-        if(k>0){
-            for(int i=count-k;i<count;i++){
-                System.out.print(arr[i]);
-            }
-            for(int i=0;i<count-k;i++){
-                System.out.print(arr[i]);
-            }
+        while(count>0){
+            if(count>k){mul*=10;}
+            else{div*=10;}
+            count--;
         }
-        else{
-            k=count-Math.abs(k);
-            for(int i=count-k;i<count;i++){
-                System.out.print(arr[i]);
-            }
-            for(int i=0;i<count-k;i++){
-                System.out.print(arr[i]);
-            }
-        }
+        int rot =n/div+ (n%div)*mul;
+        System.out.println(rot);
 
        }
 }
