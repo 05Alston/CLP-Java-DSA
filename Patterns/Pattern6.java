@@ -15,6 +15,6 @@ public class Pattern6 {
         Scanner scn = new Scanner(System.in);
 
         // write ur code here
-
+        //TODO: Implement
     }
 }
