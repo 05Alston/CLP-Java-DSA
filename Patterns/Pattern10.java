@@ -6,6 +6,11 @@ O/P->
  *   *
   * *
    *
+___*___
+__*_*__
+_*___*_
+__*_*__
+___*___
 */
 import java.util.*;
 
@@ -16,13 +21,17 @@ public class Pattern10 {
          // write ur code here
         int n= scn.nextInt();
         scn.close();
-        for(int i=1;i<=n;i++){
+        int i=1;
+        boolean flag =true;
+        while(i>=1){
             String str ="";
-            for(int j=0;j<=n;j++){
-                str=(j==i||j==n-i+1)?str+" ":str+"";
+            for(int j=0;j<=n+2;j++){
+                str=(j==n/2+2-i||j==n/2+i)?str+"*":str+" ";
             }
             System.out.println(str);
+            if(i>n/2)
+            flag=false;
+            i=(flag)?i+1:i-1;
         }
-                //TODO: Implement
      }
 }

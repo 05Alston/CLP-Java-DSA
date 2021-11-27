@@ -7,6 +7,7 @@ O/P->
 **   **
 *** ***
 
+
 */
 import java.util.*;
 
@@ -15,6 +16,21 @@ public class Pattern6 {
         Scanner scn = new Scanner(System.in);
 
         // write ur code here
-        //TODO: Implement
+        int n= scn.nextInt();
+        scn.close();
+        int i=1;
+        boolean flag =true;
+        while(i>=1){
+            String str ="";
+            if(n%2==0)
+            n++;
+            for(int j=0;j<n+2;j++){
+                str=(j>(n/2+1-i)&&j<(n/2+1+i))?str+" ":str+"*";
+            }
+            System.out.println(str);
+            if(i>n/2)
+            flag=false;
+            i=(flag)?i+1:i-1;
+        }
     }
 }
