@@ -16,12 +16,8 @@ public class Pattern3 {
         scn.close();
         for(int i=1;i<=n;i++){
             String str ="";
-            for(int j=n-i;j>0;j--){
-                str+=" ";
-            }
-            for(int j=1;j<=i;j++){
-                str+="*";
-            }
+            for(int j=0;j<n;j++)
+                str=(j<n-i)?str+" ":str+"*";
             System.out.println(str);
         }
 
